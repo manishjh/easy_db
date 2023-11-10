@@ -101,7 +101,7 @@ async fn main() -> Result<(), anyhow::Error> {
         }
     });
 
-    info!("Starting http gateway");
+    info!("Starting http api gateway");
 
     //start the http server
     HttpServer::new(move || {
