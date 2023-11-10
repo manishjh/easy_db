@@ -3,6 +3,29 @@ name = "easy_db"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# Multiple binaries
+[[bin]]
+name = "api_gateway"
+path = "src/api_gateway/main.rs"
+
+[[bin]]
+name = "raft_node"
+path = "src/raft_node/main.rs"
+
+[lib]
+name = "utils"
+path = "src/utils/mod.rs"
 
 [dependencies]
+log = "0.4.20"
+simplelog = "0.12.1"
+actix-web ="4.0"
+actix-rt = "2.2"
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+raft = "0.7.0"
+anyhow = "1.0.75"
+thiserror = "*"
+zmq = "*"
+chrono = "*"
+clap = {version = "*",features = ["derive"]}
